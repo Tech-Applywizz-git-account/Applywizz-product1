@@ -1,5 +1,5 @@
 // src/utils/api.ts
-const BACKEND = 'http://localhost:4000';
+const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
 export async function createOrder(amount: string, userEmail: string) {
   const res = await fetch(`${BACKEND}/paypal/create-order`, {
