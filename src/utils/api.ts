@@ -7,6 +7,9 @@ export async function createOrder(amount: string, userEmail: string) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ amount, userEmail })
   });
+  if (!res.ok) {
+    throw new Error(`Error creating order: ${res.statusText}`);
+  }
   return res.json();
 }
 
@@ -16,5 +19,8 @@ export async function captureOrder(orderId: string) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ orderId })
   });
+   if (!res.ok) {
+    throw new Error(`Error capturing order: ${res.statusText}`);
+  }
   return res.json();
 }
