@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import "antd/dist/antd.min.css";  // ✅ Global import
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
 import SignupPage from './pages/SignupPage';   // <-- import your SignupPage
