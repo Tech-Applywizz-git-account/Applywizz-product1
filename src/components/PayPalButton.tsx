@@ -23,7 +23,6 @@ export default function PayPalButton({ amount, userEmail, onSuccess, onError }: 
       script.onload = () => render();
       document.body.appendChild(script);
     };
-
     const render = () => {
       if (!ref.current) return;
       (window as any).paypal.Buttons({
